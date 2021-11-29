@@ -12,11 +12,7 @@ import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClientBuilder;
 import com.amazonaws.services.simpleemail.model.*;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class SendEmail implements RequestHandler<SNSEvent, Object> {
 
@@ -131,6 +127,8 @@ public class SendEmail implements RequestHandler<SNSEvent, Object> {
         context.getLogger().log("Email sent successfully to email id: " + username);
 
         body="";
+
+        Stack<Integer> = new Stack
     }
 
 

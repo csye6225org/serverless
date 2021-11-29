@@ -1,0 +1,46 @@
+name: Pull request to Org Main
+
+on:
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - uses: actions/checkout@v2
+      # 1. 
+      - name: 1. Start of validate workflow
+        run: echo "Start of validate workflow"
+      # 2.
+      - name: 2. List Files
+        run: |
+          pwd
+          ls -ltrh
+      # 3.
+      - name: 3. Update and Upgrade Enviornment
+        run: |
+          sudo apt-get update
+          sudo apt-get -qy upgrade
+      # 4. 
+      - name: 4. Install Java 11
+        run: |
+          sudo apt-get install -y openjdk-11-jdk
+          java -version
+          export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+          export PATH=$JAVA_HOME/bin:$PATH
+      # 5. 
+      - name: 5. Install Maven
+        run: |
+          sudo apt install maven -y
+      # 6.
+      - name: 6. Run Test
+        run: |
+          # cd /home/runner/work/webapp/webapp/project/
+          # mvn test
+      # 7.
+      - name: 7. End of validate workflow
+        run: echo "End of validate workflow..." 
