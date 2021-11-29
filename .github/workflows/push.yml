@@ -57,6 +57,7 @@ jobs:
       # 9. 
       - name: 9. Perform deployment
         run: |
+            cp /home/runner/work/serverless/serverless/target/lambda_function-1.0-SNAPSHOT.jar .
             aws lambda update-function-code --function-name send_verification_email --region ${{ secrets.SERVERLESS_AWS_REGION }} --zip-file file://lambda_function-1.0-SNAPSHOT.jar
       # 10.
       - name: 10. End of build-and-upload workflow
