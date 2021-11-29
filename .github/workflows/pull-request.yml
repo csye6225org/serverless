@@ -40,7 +40,7 @@ jobs:
       - name: 6. Run Validation for building Jar
         run: |
           cd /home/runner/work/serverless/serverless/
-          mvn clean install
+          # mvn clean install
       # 7.
       - name: 7. End of validate workflow
         run: echo "End of validate workflow..." 
