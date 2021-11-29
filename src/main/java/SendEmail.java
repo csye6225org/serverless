@@ -33,7 +33,7 @@ public class SendEmail implements RequestHandler<SNSEvent, Object> {
 
     public Object handleRequest(SNSEvent request, Context context){
         String timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss").format(Calendar.getInstance().getTime());
-        String Domain = System.getenv("domain_name");
+        String Domain = "prod.varaddesai.me";
         context.getLogger().log("Domain name is :" + Domain);
         from_email_address = "noreply@" + Domain;
 
