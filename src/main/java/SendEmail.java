@@ -127,8 +127,6 @@ public class SendEmail implements RequestHandler<SNSEvent, Object> {
         context.getLogger().log("Email sent successfully to email id: " + username);
 
         body="";
-
-        Stack<Integer> = new Stack
     }
 
 
