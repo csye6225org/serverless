@@ -37,10 +37,10 @@ jobs:
         run: |
           sudo apt install maven -y
       # 6.
-      - name: 6. Run Test
+      - name: 6. Run Validation for building Jar
         run: |
-          # cd /home/runner/work/webapp/webapp/project/
-          # mvn test
+          cd /home/runner/work/serverless/serverless/
+          mvn clean install
       # 7.
       - name: 7. End of validate workflow
         run: echo "End of validate workflow..." 
