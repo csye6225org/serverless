@@ -1,6 +1,5 @@
 var aws = require("aws-sdk");
 var ses = new aws.SES({ region: "us-east-1" });
-// const dynamodb = new aws.DynamoDB();
 var docClient = new aws.DynamoDB.DocumentClient();
 
 exports.handler = function (event, context) {
@@ -21,7 +20,7 @@ exports.handler = function (event, context) {
         TableName: tableName,
         Item: {
             "username":  snsMessage.username,
-            "token": token_uuid,
+            "id": snsMessage.token_uuid,
             "ttl":  expirationTime
         }
     };
