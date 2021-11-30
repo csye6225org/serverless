@@ -47,7 +47,8 @@ jobs:
       - name: 7. Generate build
         run: |
           cd /home/runner/work/serverless/serverless/
-          mvn clean install
+          # mvn clean install
+          zip SendEmail.zip index.js
       # 8.
       - name: 8. Setup AWS profile
         run: |
@@ -58,7 +59,7 @@ jobs:
       - name: 9. Perform deployment
         run: |
             cp /home/runner/work/serverless/serverless/target/lambda_function-1.0-SNAPSHOT.jar .
-            aws lambda update-function-code --function-name send_verification_email --region ${{ secrets.SERVERLESS_AWS_REGION }} --zip-file fileb://lambda_function-1.0-SNAPSHOT.jar
+            aws lambda update-function-code --function-name send_verification_email --region ${{ secrets.SERVERLESS_AWS_REGION }} --zip-file fileb://SendEmail.zip
       # 10.
       - name: 10. End of build-and-upload workflow
         run: echo "End of build-and-upload workflow.." 
