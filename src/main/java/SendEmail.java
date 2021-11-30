@@ -36,7 +36,7 @@ public class SendEmail implements RequestHandler<SNSEvent, Object> {
         String Domain = "prod.varaddesai.me";
         context.getLogger().log("Domain name is :" + Domain);
         from_email_address = "noreply@" + Domain;
-        int ttl = 5
+        int ttl = 5;
 
         //Creating ttl
         context.getLogger().log("SNS Invocation started : " + timeStamp);
