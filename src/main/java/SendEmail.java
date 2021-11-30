@@ -36,11 +36,12 @@ public class SendEmail implements RequestHandler<SNSEvent, Object> {
         String Domain = "prod.varaddesai.me";
         context.getLogger().log("Domain name is :" + Domain);
         from_email_address = "noreply@" + Domain;
+        int ttl = 5
 
         //Creating ttl
         context.getLogger().log("SNS Invocation started : " + timeStamp);
         current_system_time = Calendar.getInstance().getTimeInMillis() / 1000; // unix time
-        time_to_live = 60 * Integer.parseInt(System.getenv("ttl")); // ttl set to 5 min
+        time_to_live = 60 * ttl; // ttl set to 5 min
         total_time_to_live = time_to_live + current_system_time;
 
         try {
