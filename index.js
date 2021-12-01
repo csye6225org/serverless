@@ -10,7 +10,7 @@ exports.handler = function (event, context) {
     const snsMessage = JSON.parse(snsNotification.Message);
 
     // Setting expiration time to 5 minutes
-    const SECONDS_IN_5_MINS = 60 * 5;
+    const SECONDS_IN_5_MINS = 60 * 2;
     const secondsSinceEpoch = Math.round(Date.now() / 1000);
     const expirationTime = secondsSinceEpoch + SECONDS_IN_5_MINS;
 
