@@ -21,7 +21,8 @@ exports.handler = function (event, context) {
         Item: {
             "username":  snsMessage.username,
             "id": snsMessage.token_uuid,
-            "ttl":  expirationTime
+            "ttl":  expirationTime,
+            "messagetype": "text"
         }
     };
 
